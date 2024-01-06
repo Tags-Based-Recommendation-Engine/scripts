@@ -22,12 +22,12 @@ def clone_repositories():
     try:
         response = requests.get(repositories_url)
         response.raise_for_status()
-        repo_data = response.text.strip().split('\n')
+        repo_data = response.json()
 
         for entry in repo_data:
-            repo_info = json.loads(entry)
-            repo_url = repo_info['link']
-            repo_path = repo_info['path']
+            print(entry)
+            repo_url = entry['link']
+            repo_path = entry['path']
 
             repo_name = repo_url.split('/')[-1]
             repo_destination = root_folder / repo_path
