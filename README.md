@@ -11,9 +11,9 @@
 │   ├── git_utils.py
 │   ├── requirements.txt
 │   ├── virtualenv_utils.py
-└── .gitignore
-└── README.md
-├── setup.py
+├──  .gitignore
+├──  README.md
+└── setup.py
 ```
 
 # A brief description of what each file does
