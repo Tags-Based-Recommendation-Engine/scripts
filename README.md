@@ -41,6 +41,5 @@ Used by virtualenv_utils.py while setting up the python virtual environment
 ```
 
 ## setup.py
-```
+
 Used for setting up various repositories required for project as well as the virtual environment automatically
-```
