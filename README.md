@@ -13,33 +13,29 @@
 │   ├── virtualenv_utils.py
 ├──  .gitignore
 ├──  README.md
-└── setup.py
+├── setup_project.py
+└── update_requirements.py
 ```
 
 # A brief description of what each file does
 
-## /setup
 ### config_default.xml:
-```
-Used by generate_config.py to fetch defaults
-```
+Used by ```generate_config.py``` to fetch defaults
+
 ### config.xml:
-```
 Configuration file used by scripts related to setup
-```
+
 ### generate_config.py:
-```
-Used for regenerating config.xml
-```
+Used for regenerating ```config.xml```
+
 ### git_utils:
-```
-Used by setup.py for cloning all project repositories
-```
+Used by ```setup_project.py``` for cloning all project repositories
+
 ### requirements.txt
-```
-Used by virtualenv_utils.py while setting up the python virtual environment
-```
+Used by ```virtualenv_utils.py``` while setting up the python virtual environment
 
-## setup.py
-
+## setup_project.py
 Used for setting up various repositories required for project as well as the virtual environment automatically
+
+## update_requirements.py
+Automatically updates ```setup/requirements.txt``` using ```pip freeze```
