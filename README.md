@@ -11,8 +11,9 @@
 │   ├── git_utils.py
 │   ├── requirements.txt
 │   ├── virtualenv_utils.py
-├──  .gitignore
-├──  README.md
+├── .gitignore
+├── README.md
+├── run_engine.py
 ├── setup_project.py
 └── update_requirements.py
 ```
@@ -39,3 +40,6 @@ Used for setting up various repositories required for project as well as the vir
 
 ## update_requirements.py
 Automatically updates ```setup/requirements.txt``` using ```pip freeze```
+
+## run_engine.py
+Run Django development server for engine_control.
