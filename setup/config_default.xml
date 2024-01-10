@@ -1,1 +1,1 @@
-<config><branch>master</branch><autoupdates>False</autoupdates><repositories_url>https://raw.githubusercontent.com/Tags-Based-Recommendation-Engine/.github/master/repositories.json</repositories_url></config>
+<config><branch>master</branch><autoupdates>False</autoupdates><repositories_url>https://raw.githubusercontent.com/Tags-Based-Recommendation-Engine/.github/master/repositories.json</repositories_url><migration>auto</migration></config>

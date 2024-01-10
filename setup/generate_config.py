@@ -15,11 +15,13 @@ def fetch_defaults_from_config(config_path):
         default_branch = root.findtext("branch")
         default_autoupdates = root.findtext("autoupdates")
         default_repositories_url = root.findtext("repositories_url")
+        default_migration = root.findtext("migration")
 
         return {
             'default_branch': default_branch,
             'default_autoupdates': default_autoupdates,
-            'default_repositories_url': default_repositories_url
+            'default_repositories_url': default_repositories_url,
+            'default_migration' : default_migration
         }
 
     else:
@@ -40,6 +42,7 @@ def generate_config_xml(config_path):
     branch_name = input(f"Enter the branch name to be cloned by clone_repositories.py (default: {defaults['default_branch']}): ") or defaults['default_branch']
     autoupdates = input(f"Enable autoupdates? (true/false, default: {defaults['default_autoupdates']}): ").lower() in ['true', 't'] or defaults['default_autoupdates']
     repositories_url = input(f"Enter the path for repositories.json used by clone_repositories.py (default: {defaults['default_repositories_url']}): ") or defaults['default_repositories_url']
+    migration_input = input(f"Mode of automatic migration to run before running server (auto/interactive/disabled, default: {defaults['default_migration']}): ") or defaults['default_migration']
 
     config = ET.Element("config")
     
@@ -51,6 +54,9 @@ def generate_config_xml(config_path):
     
     repositories_url_element = ET.SubElement(config, "repositories_url")
     repositories_url_element.text = repositories_url
+
+    migration_element = ET.SubElement(config, "migration")
+    migration_element.text = migration_input
     
     xml_string = ET.tostring(config, encoding='utf-8').decode()
     
