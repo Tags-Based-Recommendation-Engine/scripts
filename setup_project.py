@@ -1,5 +1,5 @@
 import setup.virtualenv_utils as venv
-import setup.generate_config as config
+import setup.config_utils as config
 import setup.git_utils as git
 
 if __name__ == "__main__":

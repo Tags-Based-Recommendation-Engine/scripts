@@ -4,15 +4,17 @@
 ## Folder structure:
 ```
 ├── setup
+│   ├──config
+│   │   ├── config_default.xml
+│   │   ├── config.xml
 │   ├── __init__.py
-│   ├── config_default.xml
-│   ├── config.xml
-│   ├── generate_config.py
+│   ├── config_utils.py
 │   ├── git_utils.py
 │   ├── requirements.txt
 │   ├── virtualenv_utils.py
 ├── .gitignore
 ├── engine_operations.py
+├── generate_config.py
 ├── README.md
 ├── runserver.py
 ├── setup_project.py
@@ -27,10 +29,13 @@ Used by ```generate_config.py``` to fetch defaults
 ### config.xml:
 Configuration file used by scripts related to setup
 
+### config_utils.py
+Provides functions to regenerate config and fetch values from config. Used by ```git_utils.py``` and ```generate_config.py```
+
 ### generate_config.py:
 Used for regenerating ```config.xml```
 
-### git_utils:
+### git_utils.py:
 Used by ```setup_project.py``` for cloning all project repositories
 
 ### requirements.txt

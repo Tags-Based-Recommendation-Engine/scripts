@@ -1,6 +1,14 @@
 import xml.etree.ElementTree as ET
+from pathlib import Path
 import os
 import sys
+
+def get_config_value(element_name):
+    config_file = Path(__file__).resolve().parent / 'configs/config.xml'
+    tree = ET.parse(config_file)
+    root = tree.getroot()
+    element = root.find(element_name)
+    return element.text
 
 def fetch_defaults_from_config(config_path):
     config_file = config_path
@@ -37,7 +45,7 @@ def generate_config_xml(config_path):
             print(f"Skipping generation of {config_file}.")
             return
 
-    defaults = fetch_defaults_from_config("config_default.xml")
+    defaults = fetch_defaults_from_config("configs/config_default.xml")
 
     branch_name = input(f"Enter the branch name to be cloned by clone_repositories.py (default: {defaults['default_branch']}): ") or defaults['default_branch']
     autoupdates = input(f"Enable autoupdates? (true/false, default: {defaults['default_autoupdates']}): ").lower() in ['true', 't'] or defaults['default_autoupdates']
@@ -66,4 +74,4 @@ def generate_config_xml(config_path):
     print(f"{config_file} generated successfully!")
 
 if __name__ == "__main__":
-    generate_config_xml("config.xml")
+    sys.exit(1)

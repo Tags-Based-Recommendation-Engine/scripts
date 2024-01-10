@@ -3,16 +3,9 @@ from pathlib import Path
 from git import Repo
 import requests
 import json
-import xml.etree.ElementTree as ET
+from .config_utils import get_config_value
 
 ROOT_FOLDER = Path(__file__).resolve().parent.parent.parent
-
-def get_config_value(element_name):
-    config_file = Path(__file__).resolve().parent / 'config.xml'
-    tree = ET.parse(config_file)
-    root = tree.getroot()
-    element = root.find(element_name)
-    return element.text if element is not None else None
 
 def clone_repositories():
     root_folder = ROOT_FOLDER
